@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  @font-face {
+    font-family: "SF Pro";
+    src: url("/Users/apple/nammahari-portfolio/src/assests/SF-Pro.ttf")
+      format("ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    @apply bg-white text-black dark:bg-black dark:text-white;
+    font-family: "SF Pro", sans-serif;
+  }
+}

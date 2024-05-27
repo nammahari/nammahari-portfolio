@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+import Navigation from "../components/nav.astro";
+import Footer from "../components/footer.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="py-20 px-32">
+    <Navigation />
+    <slot />
+    <Footer />
+  </body>
+</html>

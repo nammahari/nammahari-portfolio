@@ -1,0 +1,40 @@
+---
+import { NavBar } from "../data/data";
+import { Icon } from "astro-icon/components";
+// Get the current path from Astro's request object
+import { getCurrentPath, getNavItemOpacityClass } from "../utils/utils";
+
+// Get the current path
+const currentPath: string = Astro.url.pathname;
+const mail = "hari@mahathaan.com";
+---
+
+<div class="flex items-center justify-between">
+  <!-- Nav Bar -->
+  <div>
+    <!-- Nav Bar List - Home, Blog -->
+    <vl class="flex gap-10">
+      {
+        NavBar.map((nav) => (
+          <a
+            class={`${getNavItemOpacityClass(currentPath, nav.url)} hover:text-opacity-100  hover:cursor-pointer transition-all duration-100 ease-in-out`}
+            href={nav.url}
+          >
+            {nav.title}
+          </a>
+        ))
+      }
+    </vl>
+  </div>
+  <div>
+    <!-- Mail Box -->
+    <div
+      class="bg-[#FE4806] rounded-full w-[278px] h-[44px] p-2 flex justify-around justify-items-center items-center cursor-pointer"
+    >
+      <!-- Mail Box - Copying Element -->
+      <span class="text-[18px]">{mail}</span>
+      <!-- Embed the 'copy' icon from '@iconify-json/mdi' -->
+      <div><Icon name="copy" class="text-[18px]" /></div>
+    </div>
+  </div>
+</div>
