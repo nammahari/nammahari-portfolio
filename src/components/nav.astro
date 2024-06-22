@@ -3,11 +3,23 @@ import { NavBar } from "../data/data";
 import { Icon } from "astro-icon/components";
 // Get the current path from Astro's request object
 import { getCurrentPath, getNavItemOpacityClass } from "../utils/utils";
+import clipboard from "clipboard";
+// Optionally display a success message to the user
 
 // Get the current path
 const currentPath: string = Astro.url.pathname;
 const mail = "hari@mahathaan.com";
 ---
+
+<script>
+  const buttons = document.querySelectorAll("button.copy");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      navigator.clipboard.writeText("hari@mahathaan.com");
+    });
+  });
+</script>
 
 <div class="flex items-center justify-between">
   <!-- Nav Bar -->
@@ -28,13 +40,13 @@ const mail = "hari@mahathaan.com";
   </div>
   <div>
     <!-- Mail Box -->
-    <div
-      class="bg-[#FE4806] rounded-full w-[278px] h-[44px] p-2 flex justify-around justify-items-center items-center cursor-pointer"
+    <button
+      class="copy bg-[#FE4806] rounded-full w-[278px] h-[44px] p-2 flex justify-around justify-items-center items-center cursor-pointer"
     >
       <!-- Mail Box - Copying Element -->
       <span class="text-[18px]">{mail}</span>
       <!-- Embed the 'copy' icon from '@iconify-json/mdi' -->
       <div><Icon name="copy" class="text-[18px]" /></div>
-    </div>
+    </button>
   </div>
 </div>

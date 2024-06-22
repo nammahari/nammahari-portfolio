@@ -1,4 +1,4 @@
-import type { navbar } from "../types";
+import type { navbar, foot } from "../types";
 
 export const NavBar: navbar[] = [
   {
@@ -9,5 +9,12 @@ export const NavBar: navbar[] = [
   {
     title: "blog",
     url: "/blog",
+  },
+];
+
+export const Foot: foot[] = [
+  {
+    titel: "Press kit",
+    url: "/press",
   },
 ];

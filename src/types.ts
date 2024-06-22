@@ -9,3 +9,8 @@ export interface AstroURL {
 export interface Astro {
   url: AstroURL;
 }
+
+export interface foot {
+  titel: string;
+  url: string;
+}
