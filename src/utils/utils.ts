@@ -1,9 +1,6 @@
 import type { Astro } from "../types";
 
 // Get the current path from Astro's request object
-export const getCurrentPath = (astro: Astro): string => {
-  return astro.url.pathname;
-};
 
 // Calculate the opacity class for a navbar item based on the current path
 export const getNavItemOpacityClass = (
