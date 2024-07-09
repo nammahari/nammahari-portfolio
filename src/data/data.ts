@@ -8,7 +8,7 @@ export const NavBar: navbar[] = [
 
   {
     title: "blog",
-    url: "/blog",
+    url: "/blogs",
   },
 ];
 

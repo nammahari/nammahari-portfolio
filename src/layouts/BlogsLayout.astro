@@ -1,0 +1,10 @@
+---
+import Layout from "./layout.astro";
+const { dep } = Astro.props;
+---
+
+<Layout title="Nammahari's Blogs">
+  <h1>{dep.title}</h1>
+  <p><em>{dep.description}</em></p>
+  <slot />
+</Layout>

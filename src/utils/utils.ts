@@ -10,7 +10,7 @@ export const getNavItemOpacityClass = (
   const navItemClass = "text-[24px] text-black dark:text-white";
   const inactiveNavItemClass = "text-opacity-50 dark:text-opacity-50";
 
-  return currentPath === url
+  return currentPath === url || currentPath.startsWith(`${url}/`)
     ? `${navItemClass} text-opacity-100`
     : `${navItemClass} ${inactiveNavItemClass}`;
 };

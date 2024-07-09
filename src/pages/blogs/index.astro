@@ -1,0 +1,25 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/layout.astro";
+import { getCollection } from "astro:content";
+
+const allBlogs = await getCollection("blogs");
+---
+
+<Layout title="Nammahari's Blog">
+  <h1>This is blog Site</h1>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    {
+      allBlogs.map((blog) => (
+        <>
+          <h1>{blog.data.title}</h1>
+          <span>{blog.data.description}</span>
+          <span>{blog.data.date}</span>
+          <span>{blog.data.time}</span>
+          <a href=`/blogs/${blog.slug}/`}>read more</a>
+        </>
+      ))
+    }
+  </ul>
+</Layout>
